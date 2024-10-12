@@ -37,12 +37,7 @@
     <!-- 依赖声明 -->
     <dependencyManagement>
         <dependencies>
-            <!-- 核心模块-->
-            <dependency>
-                <groupId>com.pp</groupId>
-                <artifactId>pp-activiti</artifactId>
-                <version>${pp.version}</version>
-            </dependency>
+
             <!-- SpringFramework的依赖配置-->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -174,6 +169,12 @@
                 <version>${pp.version}</version>
             </dependency>
 
+            <!-- 核心模块-->
+            <dependency>
+                <groupId>com.pp</groupId>
+                <artifactId>pp-activiti</artifactId>
+                <version>${pp.version}</version>
+            </dependency>
 
             <!-- 系统模块-->
             <dependency>

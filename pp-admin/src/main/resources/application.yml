@@ -47,6 +47,21 @@ user:
 
 # Spring配置
 spring:
+  activiti:
+    #校验流程文件，自动部署验证设置:true-开启（默认）、false-关闭
+    check-process-definitions: false
+    # true：activiti会对数据库表进行更新。如果表不存在，则创建
+    # false：默认值，activiti启动，会对比数据库表保存的版本，如果没有表或版本不匹配，会抛异常。
+    database-schema-update: true
+    #表示哪种情况下使用历史表，这里配置为full表示全部记录历史，方便绘制流程图
+    #记录历史等级 可配置的历史级别有none, activity, audit, full
+    history-level: full
+    #true表示使用历史表
+    db-history-used: true
+    # 关闭 SpringAutoDeployment
+    deployment-mode: never-fail
+    # 是否使用uuid，false 不使用/ 默认是 true 使用
+    use-strong-uuids: false
   # 资源信息
   messages:
     # 国际化资源文件路径

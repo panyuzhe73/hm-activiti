@@ -1,12 +1,16 @@
 package com.pp;
 
+import org.activiti.api.runtime.shared.identity.UserGroupManager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Bean;
+
+import java.util.List;
 
 /**
  * 启动程序
- * 
+ *
  * @author ruoyi
  */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
@@ -27,4 +31,29 @@ public class RuoYiApplication
                 " |  |  \\    /  \\      /           \n" +
                 " ''-'   `'-'    `-..-'              ");
     }
+    @Bean
+    public UserGroupManager userGroupManager() {
+        return new UserGroupManager() {
+            @Override
+            public List<String> getUserGroups(String s) {
+                return null;
+            }
+
+            @Override
+            public List<String> getUserRoles(String s) {
+                return null;
+            }
+
+            @Override
+            public List<String> getGroups() {
+                return null;
+            }
+
+            @Override
+            public List<String> getUsers() {
+                return null;
+            }
+        };
+    }
+
 }
